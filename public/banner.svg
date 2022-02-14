@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke-linecap="round"  width="3200" height="800" viewBox="0 0 3200 800">
+<style>
+/* <![CDATA[ */
+
+#dashed1 {
+  animation: dash1 1s linear infinite;
+}
+
+#dashed2, #dashed3 {
+  animation: dash2 1s linear infinite;
+}
+
+@keyframes dash1 {
+  0% {
+    stroke-dashoffset: 40;
+  }
+  100% {
+    stroke-dashoffset: 80;
+  }
+}
+
+@keyframes dash2 {
+  0% {
+    stroke-dashoffset: 30;
+  }
+  100% {
+    stroke-dashoffset: 60;
+  }
+}
+
+/* ]]> */
+</style>
+<defs>
+<linearGradient id="lnr1" x1="0" x2="1" y1="0" y2="0">
+  <stop offset="0" stop-color="#252566"/>
+  <stop offset="1" stop-color="#010e28"/>
+</linearGradient>
+<linearGradient id="lnr2" x1="0" x2="1" y1="0" y2="0" gradientTransform="translate(644.679 1797.39) scale(2565.56)" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="#6369ff" stop-opacity=".8"/>
+  <stop offset=".06" stop-color="#6369ff" stop-opacity=".01"/>
+  <stop offset=".1" stop-color="#6369ff" stop-opacity=".12"/>
+  <stop offset=".18" stop-color="#6369ff" stop-opacity=".33"/>
+  <stop offset=".25" stop-color="#6369ff" stop-opacity=".5"/>
+  <stop offset=".33" stop-color="#6369ff" stop-opacity=".65"/>
+  <stop offset=".41" stop-color="#6369ff" stop-opacity=".76"/>
+  <stop offset=".49" stop-color="#6369ff" stop-opacity=".84"/>
+  <stop offset=".57" stop-color="#6369ff" stop-opacity=".88"/>
+  <stop offset=".64" stop-color="#6369ff" stop-opacity=".9"/>
+  <stop offset="1" stop-color="#fff" stop-opacity=".9"/>
+</linearGradient>
+<linearGradient id="lnr3" x1="0" x2="1" y1="0" y2="0" gradientTransform="translate(1023.32 2242.2) scale(2548.02)" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="#fff" stop-opacity=".9"/>
+  <stop offset=".04" stop-color="#6369ff" stop-opacity=".9"/>
+  <stop offset=".09" stop-color="#6369ff" stop-opacity=".77"/>
+  <stop offset=".17" stop-color="#6369ff" stop-opacity=".59"/>
+  <stop offset=".26" stop-color="#6369ff" stop-opacity=".43"/>
+  <stop offset=".35" stop-color="#6369ff" stop-opacity=".3"/>
+  <stop offset=".45" stop-color="#6369ff" stop-opacity=".19"/>
+  <stop offset=".55" stop-color="#6369ff" stop-opacity=".11"/>
+  <stop offset=".67" stop-color="#6369ff" stop-opacity=".05"/>
+  <stop offset=".8" stop-color="#6369ff" stop-opacity=".01"/>
+  <stop offset="1" stop-color="#6369ff" stop-opacity=".01"/>
+</linearGradient>
+<radialGradient id="rd4">
+  <stop offset="0" stop-color="#fff" stop-opacity=".2"/>
+  <stop offset=".21" stop-color="#fff" stop-opacity=".2"/>
+  <stop offset=".58" stop-color="#b0b3ff" stop-opacity=".1"/>
+  <stop offset="1" stop-color="#6369ff" stop-opacity=".01"/>
+</radialGradient>
+<radialGradient id="rd5">
+  <stop offset="0" stop-color="#fff" stop-opacity=".2"/>
+  <stop offset=".21" stop-color="#fff" stop-opacity=".2"/>
+  <stop offset=".58" stop-color="#b0b3ff" stop-opacity=".1"/>
+  <stop offset="1" stop-color="#6369ff" stop-opacity=".01"/>
+</radialGradient>
+</defs>
+<path id="dashed1" fill="none" stroke="#6969ff" stroke-dasharray="1 40" stroke-width="3.6" d="M3169.49 800c-8.609-48.645-28.092-89.54-59.284-120.731C2988.365 557.425 2718.459 614.25 2416.845 800"/>
+<path id="dashed2" fill="none" stroke="#6969ff" stroke-dasharray="1 30" stroke-opacity=".5" stroke-width="3.6" d="M2761.73 0c-233.716 277.037-405.525 556.656-498.808 800"/>
+<path id="dashed3" fill="none" stroke="#6969ff" stroke-dasharray="1 30" stroke-linejoin="round" stroke-opacity=".4" stroke-width="3.6" d="M2305.9 0c-270 168.84-553.12 394.26-824.26 665.4A5335.802 5335.802 0 001351.668 800"/>
+<path id="solid1" fill="none" stroke="url(#lnr2)" stroke-linecap="butt" stroke-width="1.4" d="M1077.84 800c37.85-42.809 77.8-83.245 119.737-121.1 472.528-426.561 1133.41-337.454 1637.03 121.1"/>
+<path id="solid2" fill="none" stroke="url(#lnr3)" stroke-linecap="butt" stroke-width="1.4" d="M1321.87 800C1729.161 116.89 2517.75-15.518 3200 376.306"/>
+<g id="dot1">
+  <circle fill="url(#rd4)" cx="0" cy="0" r="14.85"/>
+  <circle fill="#878aec" cx="0" cy="0" r="4.1"/>
+  <animateMotion dur="10s" repeatCount="indefinite">
+    <mpath xlink:href="#solid1"/>
+  </animateMotion>
+</g>
+<g id="dot2">
+  <circle fill="url(#rd5)" cx="0" cy="0" r="14.85"/>
+  <circle fill="#4d4bcc" cx="0" cy="0" r="4.1"/>
+  <animateMotion begin="5s" dur="10s" repeatCount="indefinite">
+    <mpath xlink:href="#solid1"/>
+  </animateMotion>
+</g>
+</svg>
