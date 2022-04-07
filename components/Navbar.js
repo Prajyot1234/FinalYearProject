@@ -35,7 +35,11 @@ const NavContainer = styled.div`
     font-family: 'poppins';
     padding: 5px;
     padding-left: 20px;
-    padding-right: 20px;    
+    padding-right: 20px;  
+    @media screen and (max-width: 768px) {
+        padding-left: 5px;
+        padding-right: 5px;  
+    }  
 `
 
 const Logo = styled.div`
@@ -70,7 +74,7 @@ const SelectContainer = styled.div`
     .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
         font-family: 'poppins'!important;
         font-weight: 600;
-        color:  ${ props => props.theme.FontColor };
+        color:  ${ props => props.theme.FontColor }!important;
         background-color: ${ props => props.theme.backgroundColor };
         padding-left: 10px;
         padding-top: 14px;
@@ -90,7 +94,10 @@ const SelectContainer = styled.div`
         max-height: 250px!important;
     }
     @media screen and (max-width: 900px) {
-        margin-left: 15px;
+        margin-left: 8px;
+        .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper{
+            max-height: 200px!important;
+        }
     }
 `;
 

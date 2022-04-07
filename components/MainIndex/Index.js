@@ -16,10 +16,19 @@ import CloseIcon from '@mui/icons-material/Close';
 import Banner from './Banner';
 import IDESectionContainer from './IDESectionContainer';
 import ProblemSectionCon from './ProblemSectionCon';
+import BlogSectionCon from './BlogSectionCon'
+import Footer from './Footer';
+
+//login
+import { useSession, signOut } from "next-auth/react";
+
 
 const MainCon = styled.div`
     .span{
         color: #1BBE6D;
+    }
+    #containerElement{
+      margin-top: 50px;
     }
 `;
 
@@ -29,7 +38,7 @@ const BottomCon = styled.div`
     -webkit-box-shadow: -2px -1px 1px 1px rgba(0,0,0,0.5);
     -moz-box-shadow: -3px -2px 3px 1px rgba(0,0,0,0.425);
     box-shadow: -4px 1px 4px 2px rgba(0,0,0,0.35);
-`
+`;
 
 const NavCon = styled.div`
     width: 90%;
@@ -49,7 +58,8 @@ const NavCon = styled.div`
       -webkit-tap-highlight-color: #1BBE6D;
     }
     @media screen and (max-width: 900px) {
-       padding: 4px;
+       width: 100%;
+       padding: 5px;
     }
 `;
 
@@ -178,12 +188,24 @@ const BurgerNav=styled.div`
   li{
     padding:15px 0;
     border-bottom:1px solid  ${ props => props.theme.FontColor };
+    font-weight:600;
+    color:  ${ props => props.theme.FontColor };
+    text-decoration: none!important;
+  }
+  a{
+    color:  ${ props => props.theme.FontColor };
+    text-decoration: none!important;
+  }
+  li:hover{
     a{
-      font-weight:600;
-      color:  ${ props => props.theme.FontColor };
-      text-decoration: none;
+    color: #1BBE6D!important;
+    transition: color 0.3s;
     }
   }
+  .logout:hover{
+    cursor: pointer;
+  }
+
   @media screen and (max-width: 900px) {
       width: 250px;
   }
@@ -199,6 +221,10 @@ const Closewrapper=styled.div`
 
 
 function Index() {
+
+  const { data: session } = useSession();
+
+
   const dispatch = useDispatch();
   const theme = useSelector((state)=> state.theme); 
 
@@ -236,24 +262,66 @@ function Index() {
                       <input type="checkbox" onClick={ChangeTheme} checked={checked} />
                       <span class="slider round"></span>
                   </label>
-                  <button className='loginBtn'>Login</button>
                   <CustomMenu onClick={()=>{setBurgerstatus(true)}}/>
               </Rightmenu>
               <BurgerNav show={Burgerstatus}>
                   <Closewrapper >
                   <Customclose onClick={()=>setBurgerstatus(false)}/>
                   </Closewrapper>
-                  <li><a href="#">IDE</a></li>
-                  <li><a href="#">PROBLEMS</a></li>
-                  <li><a href="#">BLOG SECTION</a></li>
+                  <li>
+                    <Link href='#containerElement1'>
+                      IDE
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='#containerElement2'>
+                      PROBLEMS
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#containerElement3">
+                    BLOG SECTION
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link href="#containerElement4">
+                    CONTACT ME
+                    </Link>
+                  </li>
+
+
+                  {
+                    session &&
+                    <li onClick={signOut}>
+                      <a className='logout'>Logout</a>
+                    </li>
+                  }
+
               </BurgerNav>
           </NavCon>
       </BottomCon>
       <Banner />
-      <div>
+   
+      <div id="containerElementIDE">
+        <div id="containerElement1">
           <IDESectionContainer />
-          <ProblemSectionCon />
+        </div>
       </div>
+      <div id="containerElement">
+        <div id="containerElement2">
+          <ProblemSectionCon />
+        </div>
+      </div>
+      <div id="containerElement">
+        <div id="containerElement3">
+          <BlogSectionCon />
+        </div>
+      </div>
+      <div id="containerElement4">
+        <Footer />
+      </div>
+     
     </MainCon>
 )}
 

@@ -11,7 +11,7 @@ const SPCon = styled.div`
     width: 98vw;
     height: 98vh;
     margin: auto;
-    color:  ${ props => props.theme.FontColor };
+    color:  green;
     background-color: ${ props => props.theme.backgroundColor };
     font-family: 'Poppins';
     position: relative;
@@ -31,7 +31,7 @@ function BigLoader() {
     <SPCon>
         <CenterCon>
             <div  className="circle">
-              <Circle size={50} color={theme=="dark" ? "white" : "#212121"} />
+              <Circle size={50} color={"#212121"} />
             </div>
         </CenterCon>
     </SPCon>

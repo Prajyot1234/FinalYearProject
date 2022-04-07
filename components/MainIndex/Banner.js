@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+//link 
+import Link from 'next/link';
 
 const Con = styled.div`
     position: relative;
@@ -53,7 +55,7 @@ const InfoCon = styled.div`
         transition: 0.3s;
         &:hover{
             cursor: pointer;
-            background-color: #57fca7;
+            background-color: #54c48c;
             box-shadow: rgb(91 105 135 / 20%) 2px 4px 0px;
             transform: translateY(-2px);
         }
@@ -72,7 +74,7 @@ const InfoCon = styled.div`
         }
         top: 70px;
         h1{
-            font-size: 28px;
+            font-size: 26px;
         }
     }
 `;
@@ -91,7 +93,9 @@ function Banner() {
                         This website will help people who are trying to learn data structure and algorithm,
                         in structured manner.
                     </p>
-                    <button className='btn'>Sign up with Google</button>
+                    <Link href="/login">
+                        <button className='btn'>Sign up with Google</button>
+                    </Link>
                 </div>
             </div>
       </InfoCon>

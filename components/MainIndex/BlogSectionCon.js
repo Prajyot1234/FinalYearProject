@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import styled from 'styled-components';
 
 import Link from 'next/link';
@@ -82,38 +82,32 @@ const PointsCon = styled.div`
     }
 `;
 
-function ProblemSectionCon() {
+function BlogSectionCon() {
   return (
     <Con>
         <div>
-            <h1>DSA Problems?</h1>
-            <p className='ide_para'>Data Structure and Algorithm Problems are the topic on which Big Tech Companies asked Questions in Interview.</p>
+            <h1>Blog Section?</h1>
+            <p className='ide_para'>In this Section community will try to give the informative blogs on computer science & related subject for students.</p>
         </div>
         <DesCon>
             <PointsCon>
                 <div className='num_con'>
                     <p className='_num'>1.</p>
                 </div> 
-                <p className='_info'>On Our website we have variety of data Structure and Algorithm Problems in Structured manner than any other website. </p>
+                <p className='_info'>Students can post informative blogs about AI/ML/Artifical intelligence/Data structure Algorithm etc.</p>
             </PointsCon>
             <PointsCon>
                 <div className='num_con'>
                     <p className='_num'>2.</p>
                 </div> 
-                <p className='_info'>We have lots of technical Question which was asked in big Tech Companies like Google,Facebook,Mincrosoft etc. </p>
-            </PointsCon>
-            <PointsCon>
-                <div className='num_con'>
-                    <p className='_num'>3.</p>
-                </div> 
-                <p className='_info'>Using Our website you can able to learn and Practice Data Structure and Algorithm more efficently. </p>
+                <p className='_info'>Students gets so much information about specific topic using this section and and people can able to form community . </p>
             </PointsCon>
         </DesCon>
-        <Link href='/dsa' as={`/dsa`}>
-            <h1 className='_h1'>Visit Our DSA Problems Section<ChevronRightIcon className='_icon' /></h1>
+        <Link href='/blog' as={`/blog   `}>
+            <h1 className='_h1'>Visit Our Blog Section<ChevronRightIcon className='_icon' /></h1>
         </Link>
     </Con>
   )
 }
 
-export default ProblemSectionCon;
+export default BlogSectionCon;

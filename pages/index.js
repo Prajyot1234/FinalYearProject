@@ -17,6 +17,7 @@ const Container = styled.div`
 
 export default function Home() {  
   const theme = useSelector((state)=> state.theme); 
+
   return (
   <ThemeProvider theme={ theme === "light" ? lightTheme : darkTheme }>
     <Container>
