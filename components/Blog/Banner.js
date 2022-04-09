@@ -14,11 +14,12 @@ import Modal from '@mui/material/Modal';
 
 //import db instance
 import { db } from "../../firebase"
-import { addDoc, collection, serverTimestamp, orderBy, query  } from "firebase/firestore";
+import { addDoc, collection, serverTimestamp, orderBy, query, where  } from "firebase/firestore";
 import { useCollection } from 'react-firebase-hooks/firestore';
 
 //session provider
 import { useSession } from "next-auth/react";
+import CardG from './CardG';
 
 const style = {
     position: 'absolute',
@@ -45,6 +46,9 @@ const Container = styled.div`
         max-width: 1240px;
         padding-left: 10px;
         margin-bottom: 10px;
+    }
+    .margin_top{
+        margin-top: 20px;
     }
     @media only screen and (max-width: 768px) {
         .blogs_para{
@@ -115,6 +119,7 @@ const CContainer = styled.div`
 `;
 
 const BlogContainer = styled.div`
+margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
     width: 80%;
@@ -185,24 +190,44 @@ function Banner() {
 
   const { data: session } = useSession();
 
+  console.log(session.user.image);
+
   //db data
-  const [ value ,loading ] = useCollection(query(collection(db, 'blogUsers'), orderBy("timestamp", "desc")))
-  
+  //user
+  const [ value ,loading ] = useCollection(query(collection(db, 'blogUsers'), where("userName","==",`${session?.user?.name}`)))
+
+  //global
+  const [ value1 ,loading1 ] = useCollection(query(collection(db, 'blogUsers'), where("userName","!=",`${session?.user?.name}`)))
+
+
   const [Udata, setUdata] = useState();
+  //global
+  const [Udata1, setUdata1] = useState();
 
   let dataArr = [];
+  //global
+  let dataArr1 = [];
 
   useEffect(() => {
     setUdata(value);
-  }, [value]);
+    setUdata1(value1);
+  }, [value,value1]);
 
   Udata?.forEach((doc) => {
     const ndata = {
         ...doc.data(),
         id : doc.id,
     }
-    console.log(doc.id);
     dataArr.push(ndata);
+  });
+
+  //global
+  Udata1?.forEach((doc) => {
+    const ndata = {
+        ...doc.data(),
+        id : doc.id,
+    }
+    dataArr1.push(ndata);
   });
 
   //modal
@@ -253,7 +278,7 @@ function Banner() {
                 </Box>
             </Modal>
         </CContainer>
-        <p className='blogs_para'>Blogs :- </p>
+        <p className='blogs_para'>User's Blogs :- </p>
         <BlogContainer>
             {
                dataArr && dataArr.map((doc) => {
@@ -261,6 +286,17 @@ function Banner() {
                })
             }
         </BlogContainer>
+
+        <p className="blogs_para margin_top">Global Blogs :- </p>
+        
+        <BlogContainer>
+            {
+               dataArr1 && dataArr1.map((doc) => {
+                    return <CardG id={doc.id} fileName={doc.fileName} userName={doc.userName} userImg={doc.userImg} /> 
+               })
+            }
+        </BlogContainer>
+
     </Container>
   )
 }
