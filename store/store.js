@@ -11,6 +11,8 @@ const exampleInitialState = {
   output: "",
   language: "C",
   code: "",
+  problemCode : "",
+  problemLanguage: "C",
 }
 
 export const actionTypes = {
@@ -19,6 +21,8 @@ export const actionTypes = {
   SET_OUTPUT: 'SET_OUTPUT',
   SET_LANGUAGE : 'SET_LANGUAGE',
   SET_CODE : 'SET_CODE',
+  SET_PROBLEMCODE : 'SET_PROBLEMCODE',
+  SET_PROBLEMLANGUAGE: 'SET_PROBLEMLANGUAGE',
 }
 
 // REDUCERS
@@ -52,6 +56,18 @@ export const reducer = (state = exampleInitialState, action) => {
       return {
         ...state,
         code : action.payload
+      }
+
+    case actionTypes.SET_PROBLEMCODE:
+      return {
+        ...state,
+        problemCode : action.payload
+      }
+
+    case actionTypes.SET_PROBLEMLANGUAGE:
+      return {
+        ...state,
+        problemLanguage : action.payload
       }
 
     default:
@@ -92,6 +108,20 @@ export const setCode = (code) => {
   return { 
     type: actionTypes.SET_CODE, 
     payload: code, 
+  }
+}
+
+export const setProblemCode = (code) => {
+  return { 
+    type: actionTypes.SET_PROBLEMCODE, 
+    payload: code, 
+  }
+}
+
+export const setproblemLanguage = (language) => {
+  return { 
+    type: actionTypes.SET_PROBLEMLANGUAGE, 
+    payload: language, 
   }
 }
 

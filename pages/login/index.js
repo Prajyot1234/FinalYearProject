@@ -106,9 +106,13 @@ function index() {
   //theme
   const theme = useSelector((state)=> state.theme); 
 
+  console.log("session",session);
+
   if(session){
       return <AlreadyLoggedIn />
   }
+
+  console.log("session",session);
 
   return (
     <ThemeProvider theme={ theme === "light" ? lightTheme : darkTheme }>

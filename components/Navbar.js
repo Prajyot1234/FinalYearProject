@@ -71,6 +71,7 @@ const SelectContainer = styled.div`
     display: flex;
     width: 200px;
     margin-left: 35px;
+    color:  ${ props => props.theme.FontColor }!important;
     .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
         font-family: 'poppins'!important;
         font-weight: 600;
@@ -188,7 +189,8 @@ function Navbar() {
             language: language,
             input: input,
         };
-        console.table(payload);
+        // console.table(payload);
+        
         axios
             .post(URL, payload)
             .then((response) => {
@@ -196,7 +198,7 @@ function Navbar() {
                 setflagS(false);
             })
             .catch((error) => {
-                alert(" There is some kind of Error. ");
+                alert(" There is some kind of Error.");
                 dispatch(setOutput(error.Error));
                 setflagS(false);
             });

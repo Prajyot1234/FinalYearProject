@@ -19,7 +19,10 @@ import Login from '../login/index';
 import Loading from '../../components/Loader/BigLoader';
 
 const BlogContainer = styled.div`
-
+  padding-bottom: 20px;
+  color:  ${ props => props.theme.FontColor };
+   background-color: ${ props => props.theme.backgroundColor };
+   font-family: 'poppins';
 `;
 
 

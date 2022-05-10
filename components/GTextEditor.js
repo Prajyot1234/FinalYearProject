@@ -42,9 +42,8 @@ const EditorContainer = styled.div`
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         line-height: 1;
     }
-
     .title{
-        font-size: 22px;
+        font-size: 25px;
     }
 
     .rdw-editor-toolbar {
@@ -71,13 +70,19 @@ function GTextEditor() {
     if(value?.data().editorState){
         seteditorState(EditorState.moveFocusToEnd(EditorState.createWithContent(convertFromRaw(value?.data()?.editorState)) ));
     }
-  }, []);
+  }, [value]);
+
+  const onEditorStateChange = (editorState) => {
+    seteditorState(editorState);
+    setDoc(doc(db, 'blogUsers', id), { editorState : convertToRaw(editorState.getCurrentContent()) }, { merge: true})
+  }
 
   return (
     <EditorContainer>
-        <p className='title'>{value?.data().fileName} :-</p>
+        <p className='title'>{value?.data().fileName} :- </p>
         <Editor
             editorState={editorState}
+            // onEditorStateChange={onEditorStateChange}
             preserveSelectionOnBlur={true}
             toolbarClassName = "toolbar"
             editorClassName = "editor"

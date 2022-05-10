@@ -38,7 +38,6 @@ function MainIDE() {
                     language={mapLang[lang]}
                     defaultValue="//write some code"
                     onChange={(newCode,e)=>{
-                        console.log(newCode);
                         dispatch(setCode(newCode));
                     }}
                 />
