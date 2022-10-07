@@ -112,8 +112,6 @@ function index() {
       return <AlreadyLoggedIn />
   }
 
-  console.log("session",session);
-
   return (
     <ThemeProvider theme={ theme === "light" ? lightTheme : darkTheme }>
         <LoginCon>
