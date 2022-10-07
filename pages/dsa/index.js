@@ -60,8 +60,8 @@ const ProblemSection = styled.div`
 
 const URL =
     process.env.NODE_ENV == "development"
-        ? "http://localhost:3002/problems/"
-        : "https://codeditorapi.azurewebsites.net/execute"; 
+        ? "http://localhost:3002/problems"
+        : "https://fyp-backendapp.herokuapp.com/problems"; 
 
 function index() {
   const theme = useSelector((state)=> state.theme);
