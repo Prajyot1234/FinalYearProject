@@ -156,7 +156,7 @@ const RunContainer = styled.div`
 const URL =
     process.env.NODE_ENV == "development"
         ? "http://localhost:3002/execute"
-        : "https://codeditorapi.azurewebsites.net/execute"; 
+        : "https://fyp-backendapp.herokuapp.com/execute"; 
 
 function Navbar() {
     //redux

@@ -152,13 +152,13 @@ const OutputContainer = styled.div`
 const URL =
     process.env.NODE_ENV == "development"
         ? "http://localhost:3002/problems/withId"
-        : "https://codeditorapi.azurewebsites.net/execute"; 
+        : "https://fyp-backendapp.herokuapp.com/problems/withId"; 
 
         //URL's for backend
 const URL1 =
     process.env.NODE_ENV == "development"
         ? "http://localhost:3002/execute"
-        : "https://codeditorapi.azurewebsites.net/execute"; 
+        : "https://fyp-backendapp.herokuapp.com/execute"; 
 
 function Solve() {
   //theme
@@ -232,11 +232,6 @@ function Solve() {
         .then((response) => {
             setresult(response.data);
             console.log(result);
-            // if(response?.data?.output == problem?.testcases[0]?.checkOutput){
-            //     setresult("true");
-            // }else{
-            //     setresult("false");
-            // }
             setflagS(false);
         })
         .catch((error) => {

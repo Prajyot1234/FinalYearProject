@@ -85,7 +85,7 @@ const InnerContainer = styled.div`
 const URL =
     process.env.NODE_ENV == "development"
         ? "http://localhost:3002/problems/withId"
-        : "https://codeditorapi.azurewebsites.net/execute"; 
+        : "https://fyp-backendapp.herokuapp.com/problems/withId"; 
 
 function Problem() {
   //theme
@@ -134,6 +134,7 @@ function Problem() {
                 <TestcaseContainer>
                   <p className='problem_testcases'>Test Cases {index+1} :- </p>
                   <InnerContainer>
+                      <p>testcaseLength : {testcase?.testcaselength}</p>
                       <p>testcase : {testcase?.testcase}</p>
                       <p>output : {testcase?.output}</p>
                   </InnerContainer>
