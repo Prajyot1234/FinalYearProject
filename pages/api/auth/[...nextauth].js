@@ -1,6 +1,6 @@
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
-import { FirebaseAdapter } from "@next-auth/firebase-adapter"
+import { FirebaseAdapter } from "../../../dependency/firebase-adapter"
 
 import { db } from "../../../firebase"
 import * as firestoreFunctions from 'firebase/firestore';
