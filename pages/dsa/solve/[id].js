@@ -152,13 +152,13 @@ const OutputContainer = styled.div`
 const URL =
     process.env.NODE_ENV == "development"
         ? "http://localhost:3002/problems/withId"
-        : "https://fyp-backendapp.herokuapp.com/problems/withId"; 
+        : "https://outrageous-yak-pleat.cyclic.app/problems/withId"; 
 
         //URL's for backend
 const URL1 =
     process.env.NODE_ENV == "development"
         ? "http://localhost:3002/execute"
-        : "https://fyp-backendapp.herokuapp.com/execute"; 
+        : "https://outrageous-yak-pleat.cyclic.app/execute"; 
 
 function Solve() {
   //theme

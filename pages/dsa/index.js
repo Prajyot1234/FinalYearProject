@@ -61,7 +61,7 @@ const ProblemSection = styled.div`
 const URL =
     process.env.NODE_ENV == "development"
         ? "http://localhost:3002/problems"
-        : "https://fyp-backendapp.herokuapp.com/problems"; 
+        : "https://outrageous-yak-pleat.cyclic.app/problems"; 
 
 function index() {
   const theme = useSelector((state)=> state.theme);

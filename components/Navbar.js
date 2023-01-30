@@ -156,7 +156,7 @@ const RunContainer = styled.div`
 const URL =
     process.env.NODE_ENV == "development"
         ? "http://localhost:3002/execute"
-        : "https://fyp-backendapp.herokuapp.com/execute"; 
+        : "https://outrageous-yak-pleat.cyclic.app/execute"; 
 
 function Navbar() {
     //redux
